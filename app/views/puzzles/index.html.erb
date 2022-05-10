@@ -1,0 +1,21 @@
+<h1>All our puzzles</h1>
+
+<section>
+  <%= link_to "Add New Puzzle", new_puzzle_path, class: "button" %>
+</section>
+
+<% @puzzles.each do |puzzle| %>
+  <section>
+    <div>
+      <h4>
+        <%= link_to puzzle.name, puzzle_path(puzzle) %>
+      </h4>
+      <p>
+        Price: <%= puzzle.price %>
+      </p>
+      <p>
+        Description: <%= puzzle.description %>
+      </p>
+    </div>
+  </section>
+<% end %>
