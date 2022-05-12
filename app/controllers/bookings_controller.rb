@@ -7,8 +7,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.puzzle = @puzzle
+    @booking.user = current_user
     if @booking.save
-      redirect_to puzzles_path
+      redirect_to puzzle_path(@puzzle)
     else
       render :new
     end
