@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.puzzle = @puzzle
     if @booking.save
-      redirect_to puzzle_path(@ouzzle)
+      redirect_to puzzles_path
     else
       render :new
     end
@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:puzzle_id)
+    params.require(:booking).permit(:puzzle_id, :start_date, :end_date)
   end
 
   def set_puzzle

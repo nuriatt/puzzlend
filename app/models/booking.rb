@@ -3,5 +3,5 @@ class Booking < ApplicationRecord
   belongs_to :puzzle
 
   validates :start_date, presence: true
-  validates :end_date, presence: true, comparison: { greater_than: :start_date }
+  validates :end_date, presence: true
 end
