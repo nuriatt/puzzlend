@@ -28,10 +28,12 @@ p5 = Puzzle.create(name: "Thomas Kinkade: Disney Dumbo 1000 Piece Jigsaw Puzzle"
 
 puts "Creating bookings..."
 
+
 Booking.create(user: u1, puzzle: p1, start_date: 10/05/2022, end_date: 12/05/2022)
 Booking.create(user: u2, puzzle: p2, start_date: 13/05/2022, end_date: 22/05/2022)
 Booking.create(user: u1, puzzle: p3, start_date: 07/05/2022, end_date: 11/05/2022)
 Booking.create(user: u3, puzzle: p4, start_date: 10/06/2022, end_date: 14/07/2022)
 Booking.create(user: u2, puzzle: p5, start_date: 01/07/2022, end_date: 07/07/2022)
+
 
 puts "Finished!"
