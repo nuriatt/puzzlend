@@ -1,6 +1,8 @@
 <h1>Book This Puzzle</h1>
- <%= simple_form_for [@puzzle, @booking] do |f| %>
-    <%# input for start date %>
-    <%# input for end date %>
-  <%#= f.submit %>
+ <%= form_for [@puzzle, @booking] do |f| %>
+  <%= f.label :start_date %>
+  <%= f.date_field :start_date %>
+  <%= f.label :end_date %>
+  <%= f.date_field :end_date %>
+  <%= f.submit %>
 <% end %>

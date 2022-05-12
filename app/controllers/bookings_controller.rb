@@ -21,6 +21,6 @@ class BookingsController < ApplicationController
   end
 
   def set_puzzle
-    @puzzle = Puzzle.find(:puzzle_id)
+    @puzzle = Puzzle.find(params[:puzzle_id])
   end
 end
