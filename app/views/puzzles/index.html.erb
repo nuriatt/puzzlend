@@ -1,21 +1,26 @@
 <h1>All our puzzles</h1>
 
-<section>
-  <%= link_to "Add New Puzzle", new_puzzle_path, class: "button" %>
-</section>
-
 <% @puzzles.each do |puzzle| %>
-  <section>
-    <div>
-      <h4>
-        <%= link_to puzzle.name, puzzle_path(puzzle) %>
-      </h4>
-      <p>
-        Price: <%= puzzle.price %>
-      </p>
-      <p>
-        Description: <%= puzzle.description %>
-      </p>
-    </div>
-  </section>
+  <div class="card-product">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <section>
+      <div class="card-product-infos">
+        <div>
+          <h2>
+            Name: <%= link_to puzzle.name, puzzle_path(puzzle) %>
+          </h2>
+          <p>
+            Description: <%= puzzle.description %>
+          </p>
+          <p>
+            Price: <%= puzzle.price %>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 <% end %>
+
+<section>
+  <%= link_to "Add New Puzzle", new_puzzle_path, class: "btn btn-gradient" %>
+</section>
