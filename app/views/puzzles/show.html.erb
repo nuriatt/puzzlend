@@ -1,5 +1,5 @@
 <div class="card-trip">
-  <%= cl_image_tag @puzzle.photo.key, height: 350, width: 400, crop: :fill %>
+  <%= cl_image_tag @puzzle.photo.key if @puzzle.photo.key %>
   <div class="card-trip-infos">
     <div>
       <h2><%= @puzzle.name %></h2>
