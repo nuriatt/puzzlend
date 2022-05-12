@@ -1,5 +1,12 @@
-<h1><%= @puzzle.name %></h1>
-<%= cl_image_tag @puzzle.photo.key, height: 350, width: 400, crop: :fill %>
-<p><%= @puzzle.price %></p>
-<p><%= @puzzle.description %></p>
-<p><%= link_to 'Back to Puzzles', puzzles_path %> </p>
+<div class="card-trip">
+  <%= cl_image_tag @puzzle.photo.key, height: 350, width: 400, crop: :fill %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @puzzle.name %></h2>
+      <p><%= @puzzle.description %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= @puzzle.price %></h2>
+  </div>
+</div>
+
+<p><%= link_to 'Back to Puzzles', puzzles_path, class: "btn btn-gradient" %> </p>
