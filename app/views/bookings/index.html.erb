@@ -1,0 +1,23 @@
+<h1>My bookings</h1>
+
+<% @bookings.each do |booking| %>
+  <% puzzle = Puzzle.find(booking.puzzle_id) %>
+  <div class="card-product">
+    <section>
+      <div class="card-product-infos">
+        <div>
+          <h2>
+            Puzzle name: <%= puzzle.name %>
+          </h2>
+          <p>
+            Start date: <%= booking.start_date.strftime("%d/%m/%Y") %>
+          </p>
+          <p>
+            End date: <%= booking.end_date.strftime("%d/%m/%Y") %>
+          </p>
+          <p><%= link_to '🗑️ Delete', booking_path(booking), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+        </div>
+      </div>
+    </section>
+  </div>
+<% end %>

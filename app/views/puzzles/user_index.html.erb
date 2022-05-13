@@ -1,4 +1,4 @@
-<h1>All your puzzles</h1>
+<h1>My puzzles</h1>
 
 <% @puzzles.each do |puzzle| %>
   <div class="card-product">
@@ -20,3 +20,8 @@
     </section>
   </div>
 <% end %>
+
+
+<section>
+  <%= link_to "Add New Puzzle", new_puzzle_path, class: "btn btn-gradient" %>
+</section>

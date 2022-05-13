@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_puzzle, only: [:new, :create]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.user_bookings(current_user)
   end
 
   def new
@@ -14,10 +14,16 @@ class BookingsController < ApplicationController
     @booking.puzzle = @puzzle
     @booking.user = current_user
     if @booking.save
-      redirect_to puzzle_path(@puzzle)
+      redirect_to puzzle_path(@puzzle), notice: 'Booking confirmed!'
     else
       render :new
     end
+  end
+
+  def destroy
+    booking = Booking.find(params[:id])
+    booking.destroy
+    redirect_to bookings_path, alert: 'Booking deleted!'
   end
 
   private
