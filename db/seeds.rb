@@ -60,7 +60,7 @@ p4.photo.attach(io: file_4, filename: 'puzzle.jpg', content_type: 'image/jpg')
 p5 = Puzzle.create(
   name: "Thomas Kinkade: Disney Dumbo 1000 Piece",
   description: "Thomas Kinkade brings another stunning Disney themed jigsaw puzzle. Here we see everyone's favourite elephant Jumbo soring above the circus of happiness, below is his mother, the ringmaster and all the excited families ready to watch the show.",
-  price: 11.50,
+  price: 0.00,
   user: u3
 )
 file_5 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v1652383787/puzzlend/Thomas_Kinkade-_Disney_Dumbo_1000_Piece_Jigsaw_Puzzle_01_c4np6q.jpg")
@@ -78,7 +78,7 @@ p6.photo.attach(io: file_6, filename: 'puzzle.jpg', content_type: 'image/jpg')
 p7 = Puzzle.create(
   name: "Avocado Park 250 XL Piece",
   description: "Holy guacamole! This pear-fect 250 piece puzzle is filled to the brim with everyone's favourite little fruit. We've got avo-people doing avo-cardio, chilling with their avo-dogs, some even avo-car! We have faith that you can smash your way through this one! This puzzle is perfect for those aged 8 and up.",
-  price: 11.99,
+  price: 0.00,
   user: u1
 )
 file_7 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v1652438505/puzzlend/Avocado_Park_250_XL_Piece_Jigsaw_Puzzle_xsdumy.jpg")
