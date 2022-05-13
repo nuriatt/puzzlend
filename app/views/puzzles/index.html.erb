@@ -2,7 +2,7 @@
 
 <% @puzzles.each do |puzzle| %>
   <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <%= cl_image_tag puzzle.photo.key if puzzle.photo.key %>
     <section>
       <div class="card-product-infos">
         <div>
