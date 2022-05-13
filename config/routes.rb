@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'my_puzzles/:id', to: 'puzzles#user_index', as: 'my_puzzles'
 
+  resources :bookings, only: [:index, :destroy]
+
   resources :puzzles do
     resources :bookings, only: [:new, :create]
   end
