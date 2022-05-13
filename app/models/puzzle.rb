@@ -7,6 +7,6 @@ class Puzzle < ApplicationRecord
   has_one_attached :photo
 
   def free?
-    price == 0
+    price.zero?
   end
 end

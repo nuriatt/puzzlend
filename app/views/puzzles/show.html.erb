@@ -4,6 +4,7 @@
   <div class="card-trip-infos">
     <div>
       <h2><%= @puzzle.name %></h2>
+      <p>Pieces: <%= @puzzle.pieces.floor %></p>
       <p><%= @puzzle.description %></p>
     </div>
     <h2 class="card-trip-pricing"><%= price(@puzzle) %></h2>
