@@ -6,6 +6,10 @@ class PuzzlesController < ApplicationController
     @puzzles = Puzzle.all
   end
 
+  def user_index
+    @puzzles = Puzzle.user_puzzles(current_user)
+  end
+
   def show
     @puzzle = find_puzzle
   end
