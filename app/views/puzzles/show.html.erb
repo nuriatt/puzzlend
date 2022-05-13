@@ -4,12 +4,12 @@
   <div class="card-trip-infos">
     <div>
       <h2><%= @puzzle.name %></h2>
+      <p>Pieces: <%= @puzzle.pieces.floor %></p>
       <p><%= @puzzle.description %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= @puzzle.price %></h2>
+    <h2 class="card-trip-pricing"><%= price(@puzzle) %></h2>
   </div>
 </div>
 
 <p><%= link_to 'Back to Puzzles', puzzles_path, class: "btn btn-gradient" %> </p>
 <p><%= link_to 'Make Booking', new_puzzle_booking_path(@puzzle), class:"btn btn-gradient" %> </p>
-
