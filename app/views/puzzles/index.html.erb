@@ -1,22 +1,23 @@
 <h1>Puzzlend Top 10 Pics</h1>
-
-<% @puzzles.each do |puzzle| %>
-  <div class="card-product">
-    <%= cl_image_tag puzzle.photo.key if puzzle.photo.key %>
-    <section>
-      <div class="card-product-infos">
-        <div>
-          <h2>
-            Name: <%= link_to puzzle.name, puzzle_path(puzzle) %>
-          </h2>
-          <p>
-            Pieces: <%= puzzle.pieces.floor %>
-          </p>
-          <p>
-            Price: <%= price(puzzle) %>
-          </p>
+<div class="container">
+  <% @puzzles.each do |puzzle| %>
+    <div class="card-product">
+      <%= cl_image_tag puzzle.photo.key if puzzle.photo.key %>
+      <section>
+        <div class="card-product-infos">
+          <div>
+            <h2>
+              Name: <%= link_to puzzle.name, puzzle_path(puzzle) %>
+            </h2>
+            <p>
+              Pieces: <%= puzzle.pieces.floor %>
+            </p>
+            <p>
+              Price: <%= price(puzzle) %>
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
-  </div>
-<% end %>
+      </section>
+    </div>
+  <% end %>
+</div>
