@@ -1,10 +1,11 @@
-<h1>Book This Puzzle</h1>
- <div class="container d-flex justify-content-around">
-  <%= form_for [@puzzle, @booking] do |f| %>
-    <%= f.label :start_date %>
+
+<div class="container">
+
+  <h1>Book <%= @puzzle.name %></h1>
+
+  <%= bootstrap_form_for [@puzzle, @booking] do |f| %>
     <%= f.date_field :start_date %>
-    <%= f.label :end_date %>
     <%= f.date_field :end_date %>
-    <%= f.submit %>
+    <%= f.submit "Book" %>
   <% end %>
 </div>

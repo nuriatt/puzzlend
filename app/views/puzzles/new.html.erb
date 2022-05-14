@@ -1,18 +1,14 @@
-<h1>Create New Puzzle</h1>
-<%= form_with(model: @puzzle, local: true) do |f| %>
+<div class="container">
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <h1>Add a new puzzle</h1>
 
-  <%= f.label :description %>
-  <%= f.text_area :description, rows: 7 %>
+  <%= bootstrap_form_for(@puzzle) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_area :description %>
+    <%= f.number_field :price %>
+    <%= f.number_field :pieces %>
+    <%= f.file_field :photo %>
+    <%= f.submit "Create" %>
+  <% end %>
 
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-
-  <%= f.label :photo %>
-  <%= f.file_field :photo %>
-
-  <%= f.submit %>
-
-<% end %>
+</div>

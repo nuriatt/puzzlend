@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get 'my_puzzles/:id', to: 'puzzles#user_index', as: 'my_puzzles'
+  get 'my_puzzles', action: :my_puzzles, controller: 'users'
+  get 'my_bookings', action: :my_bookings, controller: 'users'
 
   resources :bookings, only: [:index, :destroy]
 

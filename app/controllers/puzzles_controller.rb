@@ -6,10 +6,6 @@ class PuzzlesController < ApplicationController
     @puzzles = Puzzle.all
   end
 
-  def user_index
-    @puzzles = Puzzle.user_puzzles(current_user)
-  end
-
   def show
     @puzzle = find_puzzle
   end
@@ -34,8 +30,13 @@ class PuzzlesController < ApplicationController
 
   def create
     @puzzle = Puzzle.new(puzzle_params)
+    @puzzle.user = current_user
     @puzzle.save
-    redirect_to @puzzle
+    if @puzzle.save
+      redirect_to my_puzzles_path, notice: 'New puzzle created!'
+    else
+      render :new
+    end
   end
 
   private
@@ -45,6 +46,6 @@ class PuzzlesController < ApplicationController
   end
 
   def puzzle_params
-    params.require(:puzzle).permit(:name, :description, :price, :photo)
+    params.require(:puzzle).permit(:name, :description, :price, :pieces, :photo)
   end
 end
