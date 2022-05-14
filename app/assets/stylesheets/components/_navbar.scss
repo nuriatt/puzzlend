@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-image: url("https://images.unsplash.com/photo-1586527155101-48f717fe11c9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
+  background-color: #FDF5DA;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,12 +8,13 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 150px;
+  width: 75px;
 }
 
 .nav-item {
-  background-color: rgb(138, 138, 236);
-  border-radius: 3em;
+  background-color: #EFD43B;
+  border-radius: 1em;
+  margin: 5px;
 }
 
 h1{
