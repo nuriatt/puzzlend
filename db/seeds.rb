@@ -123,10 +123,10 @@ p10.photo.attach(io: file_10, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 puts "Creating bookings..."
 
-Booking.create(user: u1, puzzle: p1)
-Booking.create(user: u2, puzzle: p2)
-Booking.create(user: u1, puzzle: p3)
-Booking.create(user: u3, puzzle: p4)
-Booking.create(user: u2, puzzle: p5)
+Booking.create(user: u1, puzzle: p1, start_date: Time.now, end_date: Time.now + (2*7*24*60*60))
+Booking.create(user: u2, puzzle: p2, start_date: Time.now + (2*24*60*60), end_date: Time.now + (1*7*24*60*60))
+Booking.create(user: u1, puzzle: p3, start_date: Time.now + (2*7*24*60*60), end_date: Time.now + (3*7*24*60*60))
+Booking.create(user: u3, puzzle: p4, start_date: Time.now + (3*7*24*60*60), end_date: Time.now + (2*24*60*60))
+Booking.create(user: u2, puzzle: p5, start_date: Time.now, end_date: Time.now + (2*7*24*60*60))
 
 puts "Finished!"

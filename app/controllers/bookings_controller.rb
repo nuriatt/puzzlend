@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.puzzle = @puzzle
     @booking.user = current_user
     if @booking.save
-      redirect_to puzzle_path(@puzzle), notice: 'Booking confirmed!'
+      redirect_to bookings_path, notice: 'Booking confirmed!'
     else
       render :new
     end
