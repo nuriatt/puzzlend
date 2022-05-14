@@ -1,7 +1,7 @@
 
 <div class="container">
 
-  <h1>Book <%= @puzzle.name %></h1>
+  <h2>Book <%= @puzzle.name %></h2>
 
   <%= bootstrap_form_for [@puzzle, @booking] do |f| %>
     <%= f.date_field :start_date %>

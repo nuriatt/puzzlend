@@ -1,26 +1,29 @@
-<h1>My puzzles</h1>
+<div class="container">
 
-<% @puzzles.each do |puzzle| %>
-  <div class="card-product">
-    <%= cl_image_tag puzzle.photo.key if puzzle.photo.key %>
-    <section>
-      <div class="card-product-infos">
-        <div>
-          <h2>
-            Name: <%= link_to puzzle.name, puzzle_path(puzzle) %>
-          </h2>
-          <p>
-            Pieces: <%= puzzle.pieces.floor %>
-          </p>
-          <p>
-            Price: <%= price(puzzle) %>
-          </p>
+  <h2>My Puzzles</h2>
+  <% @puzzles.each do |puzzle| %>
+    <div class="card-product">
+      <%= cl_image_tag puzzle.photo.key if puzzle.photo.key %>
+      <section>
+        <div class="card-product-infos">
+          <div>
+            <h2>
+              <%= link_to puzzle.name, puzzle_path(puzzle) %>
+            </h2>
+            <p>
+              <strong>Pieces:</strong> <%= puzzle.pieces.floor %>
+            </p>
+            <p>
+              <strong><%= price(puzzle) %></strong>
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
-  </div>
-<% end %>
+      </section>
+    </div>
+  <% end %>
 
-<section>
-  <%= link_to "Add New Puzzle", new_puzzle_path, class: "btn btn-gradient" %>
-</section>
+  <section>
+    <%= link_to "Add New Puzzle", new_puzzle_path, class: "btn btn-gradient" %>
+  </section>
+
+</div>
