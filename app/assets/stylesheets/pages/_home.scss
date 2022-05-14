@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+
+
+.header {
+  padding: 170px;
+  text-align: center;
+  color: white;
+  background: url("Landing_page.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+h1 {
+  font-size: 100px;
+  font-family: 'Crimson Pro', serif;
+  text-shadow: 2px 2px 2px #ef9292;
+}
+
+.subheader {
+  font-family: 'Crimson Pro', serif;
+  text-shadow: 2px 2px 2px rgb(123, 114, 114);
+  font-size: 40px;
+  margin-bottom: 50px;
+}
