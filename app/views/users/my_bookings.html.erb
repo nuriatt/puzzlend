@@ -1,23 +1,27 @@
-<h1>My bookings: <%= pluralize(@bookings.size, "puzzle") %></h1>
+<div class="container">
 
-<% @bookings.each do |booking| %>
-  <% puzzle = Puzzle.find(booking.puzzle_id) %>
-  <div class="card-product">
-    <section>
-      <div class="card-product-infos">
-        <div>
-          <h2>
-            Puzzle name: <%= puzzle.name %>
-          </h2>
-          <p>
-            Start date: <%= booking.start_date.strftime("%d/%m/%Y") %>
-          </p>
-          <p>
-            End date: <%= booking.end_date.strftime("%d/%m/%Y") %>
-          </p>
-          <p><%= link_to '✏️ Update', '#' %> | <%= link_to '🗑️ Delete', booking_path(booking), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+  <h2>My Bookings: <%= pluralize(@bookings.size, "puzzle") %></h2>
+
+  <% @bookings.each do |booking| %>
+    <% puzzle = Puzzle.find(booking.puzzle_id) %>
+    <div class="card-product">
+      <section>
+        <div class="card-product-infos">
+          <div>
+            <h2>
+              <%= puzzle.name %>
+            </h2>
+            <p>
+              <strong>Start date:</strong> <%= booking.start_date.strftime("%d/%m/%Y") %>
+            </p>
+            <p>
+              <strong>End date:</strong> <%= booking.end_date.strftime("%d/%m/%Y") %>
+            </p>
+            <p><%= link_to '✏️ Update', '#' %> | <%= link_to '🗑️ Delete', booking_path(booking), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+          </div>
         </div>
-      </div>
-    </section>
-  </div>
-<% end %>
+      </section>
+    </div>
+  <% end %>
+
+</div>
