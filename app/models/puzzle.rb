@@ -10,7 +10,4 @@ class Puzzle < ApplicationRecord
     price.zero?
   end
 
-  def self.user_puzzles(user)
-    where('user_id = ?', user)
-  end
 end

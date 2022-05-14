@@ -15,7 +15,7 @@
           <p>
             End date: <%= booking.end_date.strftime("%d/%m/%Y") %>
           </p>
-          <p><%= link_to '🗑️ Delete', booking_path(booking), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+          <p><%= link_to '✏️ Update', '#' %> | <%= link_to '🗑️ Delete', booking_path(booking), method: :delete, data: {confirm: "Are you sure?"} %> </p>
         </div>
       </div>
     </section>
