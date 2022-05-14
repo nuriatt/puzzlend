@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h2>My Puzzles</h2>
+  <h1>My Puzzles</h1>
   <% @puzzles.each do |puzzle| %>
     <div class="card-product">
       <%= cl_image_tag puzzle.photo.key if puzzle.photo.key %>
