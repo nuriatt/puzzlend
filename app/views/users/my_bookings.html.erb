@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h2>My Bookings: <%= pluralize(@bookings.size, "puzzle") %></h2>
+  <h1>My Bookings: <%= pluralize(@bookings.size, "puzzle") %></h1>
 
   <% @bookings.each do |booking| %>
     <% puzzle = Puzzle.find(booking.puzzle_id) %>
