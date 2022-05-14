@@ -1,14 +1,20 @@
 
-<div class="card-trip">
-  <%= cl_image_tag @puzzle.photo.key if @puzzle.photo.key %>
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @puzzle.name %></h2>
-      <p>Pieces: <%= @puzzle.pieces.floor %></p>
-      <p><%= @puzzle.description %></p>
-    </div>
-    <h2 class="card-trip-pricing"><%= price(@puzzle) %></h2>
+ <div class="container">
+  <div class="card-trip d-flex">
+    <%= cl_image_tag @puzzle.photo.key if @puzzle.photo.key %>
+    <div class="container d-flex flex-column justify-content-between">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= @puzzle.name %></h2>
+          <p>Pieces: <%= @puzzle.pieces.floor %></p>
+          <p><%= @puzzle.description %></p>
+        </div>
+      </div>
+        <div class="container d-flex justify-content-between align-items-center">
+        <%= link_to 'Book this puzzle', new_puzzle_booking_path(@puzzle), class:"btn btn-primary d-flex justify-content-end align-items-center" %>
+        <h2 class="card-trip-pricing d-flex justify-content-end"><%= price(@puzzle) %></h2>
+        </div>
   </div>
-</div>
 
-<p><%= link_to 'Book this puzzle', new_puzzle_booking_path(@puzzle), class:"btn btn-gradient" %> </p>
+</div>
+</div>
