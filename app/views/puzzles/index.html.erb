@@ -1,23 +1,24 @@
 <h1>Puzzle Library</h1>
+
 <div class="container">
-  <% @puzzles.each do |puzzle| %>
-    <div class="card-product">
-      <%= cl_image_tag puzzle.photo.key if puzzle.photo.key %>
-      <section>
-        <div class="card-product-infos">
-          <div>
-            <h2>
-              <%= link_to puzzle.name, puzzle_path(puzzle) %>
-            </h2>
-            <p>
-              <%= puzzle.pieces.floor %> Pieces
-            </p>
-            <p>
-              <strong><%= price(puzzle) %></strong>
-            </p>
+  <div class="row justify-content-center">
+    <div class="puzzles col-sm-8">
+
+        <% @puzzles.each do |puzzle| %>
+          <div class="card-product">
+            <%= cl_image_tag puzzle.photo.key if puzzle.photo.key %>
+            <section>
+              <div class="card-product-infos">
+                <div>
+                  <h2><%= link_to puzzle.name, puzzle_path(puzzle) %></h2>
+                  <p><%= puzzle.pieces.floor %> Pieces</p>
+                  <p><strong><%= price(puzzle) %></strong></p>
+                </div>
+              </div>
+            </section>
           </div>
-        </div>
-      </section>
+        <% end %>
+
     </div>
-  <% end %>
+  </div>
 </div>

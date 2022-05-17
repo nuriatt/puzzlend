@@ -3,7 +3,11 @@ class PuzzlesController < ApplicationController
   # READ
 
   def index
-    @puzzles = Puzzle.all
+    if params[:query].present?
+      @puzzles = Puzzle.search_by_puzzle_name(params[:query])
+    else
+      @puzzles = Puzzle.all
+    end
   end
 
   def show
@@ -11,7 +15,6 @@ class PuzzlesController < ApplicationController
   end
 
   # UPDATE
-
   def edit
     @puzzle = find_puzzle
   end
@@ -23,7 +26,6 @@ class PuzzlesController < ApplicationController
   end
 
   # CREATE
-
   def new
     @puzzle = Puzzle.new
   end
