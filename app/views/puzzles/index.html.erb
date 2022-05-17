@@ -4,6 +4,16 @@
   <div class="row justify-content-center">
     <div class="puzzles col-sm-8">
 
+    <div class="container">
+      <%= form_tag puzzles_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a puzzle"%>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
         <% @puzzles.each do |puzzle| %>
           <div class="card-product">
             <%= cl_image_tag puzzle.photo.key if puzzle.photo.key %>
