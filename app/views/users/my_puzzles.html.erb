@@ -1,29 +1,32 @@
 <div class="container">
-
   <h1>My Puzzles</h1>
-  <% @puzzles.each do |puzzle| %>
-    <div class="card-product">
-      <%= cl_image_tag puzzle.photo.key if puzzle.photo.key %>
-      <section>
-        <div class="card-product-infos">
-          <div>
-            <h2>
-              <%= link_to puzzle.name, puzzle_path(puzzle) %>
-            </h2>
-            <p>
-              <strong>Pieces:</strong> <%= puzzle.pieces.floor %>
-            </p>
-            <p>
-              <strong><%= price(puzzle) %></strong>
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
-  <% end %>
+</div>
 
-  <section>
-    <%= link_to "Add New Puzzle", new_puzzle_path, class: "btn btn-gradient" %>
-  </section>
+<div class="container">
 
 </div>
+
+  <div class="container">
+    <div class="cards">
+      <% @puzzles.each do |puzzle| %>
+        <div class="card" style="width: 18rem;">
+          <div class="card-category" style="background-image: url('<%= cl_image_path puzzle.photo.key if puzzle.photo.key %>')">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= puzzle.name %></h5>
+            <p class="card-text"><%= puzzle.pieces.floor %> Pieces &bull; <strong><%= price(puzzle) %></strong></p>
+            <%= link_to 'View details', puzzle_path(puzzle) %>
+          </div>
+        </div>
+      <% end %>
+      <div class="card" style="width: 18rem;">
+          <div class="card-category" style="background-image: url('https://res.cloudinary.com/mygreenhouses/image/upload/v1652817559/puzzlend/square_add_dqahtf.png')">
+          </div>
+          <div class="card-body card-new">
+            <h5 class="card-title">Title</h5>
+            <p class="card-text">Pieces &bull; Price</p>
+            <%= link_to "Add New Puzzle", new_puzzle_path, class: "btn btn-secondary" %>
+          </div>
+        </div>
+    </div>
+  </div>
