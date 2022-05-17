@@ -22,7 +22,7 @@ u3 = User.create(email: 'tom@test.com', password: 'pass123')
 puts "Creating puzzles..."
 
 p1 = Puzzle.create(
-  name: "Thomas Kinkade: Peaceful Moments 500 Piece",
+  name: "Peaceful Moments",
   description: "Thomas Kinkade takes us to a beautiful country lodge, situated close to the banks of the bubbling river flanked by forests and mountains. We can imagine a warming log fire burning as smoke spirals from the lodges stone chimney. The family is enjoying their break by fishing and relaxing in the quiet wilderness.\nThe charming puzzle could quickly become a favourite way to relax.",
   price: 13.99,
   pieces: 500,
@@ -32,7 +32,7 @@ file_1 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165238
 p1.photo.attach(io: file_1, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p2 = Puzzle.create(
-  name: "Owls in the Wood 1000 Piece",
+  name: "Owls in the Wood",
   description: "Owls in the Wood is the title of this delightful 1000-piece Falcon de luxe jigsaw puzzle, which is part of the Falcon de luxe Animals collection. The puzzle image depicts a cloudy autumn day in the countryside that is being enjoyed by an array of stunning owls who are sat on beautifully coloured flowers and the branches on the trees. What really is stunning about this 1000 piece jigsaw puzzle is the vibrant colours used to paint these beautiful owls and bring to life this gloomy day.",
   price: 9.00,
   pieces: 1000,
@@ -42,7 +42,7 @@ file_2 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165238
 p2.photo.attach(io: file_2, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p3 = Puzzle.create(
-  name: "Summer in Rio de Janiero 1000 Piece",
+  name: "Summer in Rio de Janiero",
   description: "Take in the views of Rio de Janeiro, the second most populated city in Brazil, on a glorious Summer's day. In this spectacular scene of Botafogo, the name of this beachside area, we see Sugarloaf Mountain standing tall over the water. Just imagine the incredible views while taking a ride on the Sugarloaf Cable Car. This beautiful jigsaw puzzle will transport you to this beautiful place off the coast of the Atlantic Ocean.",
   price: 14.99,
   pieces: 1000,
@@ -52,7 +52,7 @@ file_3 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165238
 p3.photo.attach(io: file_3, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p4 = Puzzle.create(
-  name: "Munster Historical Map 1000 Piece (1610)",
+  name: "Munster Historical Map (1610)",
   description: "Originally sourced by renowned English cartographer John Speed (1552-1629) who published an atlas called 'The Theatre of the Empire of Great Britaine'. His maps themselves were of high quality and gained a great reputation for being among the best county maps. The finished jigsaw measures 66 x 50cm and comes with a Free colour guide print.",
   price: 19.99,
   pieces: 1000,
@@ -62,7 +62,7 @@ file_4 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165238
 p4.photo.attach(io: file_4, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p5 = Puzzle.create(
-  name: "Thomas Kinkade: Disney Dumbo 1000 Piece",
+  name: "Thomas Kinkade: Disney Dumbo",
   description: "Thomas Kinkade brings another stunning Disney themed jigsaw puzzle. Here we see everyone's favourite elephant Jumbo soring above the circus of happiness, below is his mother, the ringmaster and all the excited families ready to watch the show.",
   price: 0.00,
   pieces: 1000,
@@ -72,7 +72,7 @@ file_5 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165238
 p5.photo.attach(io: file_5, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p6 = Puzzle.create(
-  name: "Bacchus and Ariadne - National Gallery 1000 Piece",
+  name: "Bacchus and Ariadne - National Gallery",
   description: "Painted by Titian and dating back to 1520, Bacchus and Ariadne is a story from Greek Mythology, set on the Greek island of Naxos. In this scene, Ariadne has been abandoned by Theseus on this island. Bacchus, who is the god of wine, is leaping from a chariot drawn by cheetahs towards Adriadne after falling in love with her at first sight. In the sky, you can see Ariadne's constellation of stars, which was created for her by Bacchus. Discover the story as a beautiful 1000 piece jigsaw puzzle.",
   price: 19.99,
   pieces: 1000,
@@ -82,7 +82,7 @@ file_6 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165243
 p6.photo.attach(io: file_6, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p7 = Puzzle.create(
-  name: "Avocado Park 250 XL Piece",
+  name: "Avocado Park",
   description: "Holy guacamole! This pear-fect 250 piece puzzle is filled to the brim with everyone's favourite little fruit. We've got avo-people doing avo-cardio, chilling with their avo-dogs, some even avo-car! We have faith that you can smash your way through this one! This puzzle is perfect for those aged 8 and up.",
   price: 0.00,
   pieces: 250,
@@ -92,7 +92,7 @@ file_7 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165243
 p7.photo.attach(io: file_7, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p8 = Puzzle.create(
-  name: "Christmas Puppies 500 Piece",
+  name: "Christmas Puppies",
   description: "This Christmas filled jigsaw puzzle is also filled with the most adorable puppies! Is there a better combination? With a beautifully decorated Christmas tree, decorations above the wood burning stove, stockings and more, you will feel truly festive piecing together this jigsaw. Even one of the puppies is wearing a Santa hat! These adorable puppies are truly getting into the Christmas spirit, and even though they've started opening the presents, they've been very good at not eating Santa's mince pies!",
   price: 7.00,
   pieces: 500,
@@ -102,7 +102,7 @@ file_8 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165243
 p8.photo.attach(io: file_8, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p9 = Puzzle.create(
-  name: "Full of Beans - Impuzzible No.13 - 1500 Piece",
+  name: "Full of Beans No.13",
   description: "You'll certainly need a cup of coffee or two when trying to complete this tricky bean-filled jigsaw puzzle. The coffee cup full of beans might give you a bit of help, but most of the puzzle is covered in coffee!",
   price: 14.99,
   pieces: 1500,
@@ -112,7 +112,7 @@ file_9 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165243
 p9.photo.attach(io: file_9, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p10 = Puzzle.create(
-  name: "Village Wedding - Sarah Adams 500XL Piece",
+  name: "Village Wedding",
   description: "It's a beautiful Spring day and the village is in a celebratory mood. A happy couple has just said I do and are making their way to the reception from the church ceremony. Villagers watch on as the wedding party make their way around the pond. A little girl is looking at the beautiful bride from her garden, admiring her pretty dress and flowers. In this scene, you will also find beautiful wildlife, stunning flowers and a cute ginger cat.",
   price: 14.99,
   pieces: 5000,
@@ -120,6 +120,26 @@ p10 = Puzzle.create(
 )
 file_10 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v1652438503/puzzlend/Village_Wedding_-_Sarah_Adams_1000_or_500XL_Piece_Jigsaw_Puzzle_b2r9sc.webp")
 p10.photo.attach(io: file_10, filename: 'puzzle.jpg', content_type: 'image/jpg')
+
+p11 = Puzzle.create(
+  name: "Wasgij Retro Original 6",
+  description: "This is a re-released version of Wasgij Original 6 - Blooming Marvellous‚, giving you the chance to collect the Wasgij range from the very beginning, which were released over 25 years ago!",
+  price: 14.99,
+  pieces: 1000,
+  user: u1
+)
+file_11 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v1652814046/puzzlend/Wasgij_Retro_Original_6_ssygnh.jpg")
+p11.photo.attach(io: file_11, filename: 'puzzle.jpg', content_type: 'image/jpg')
+
+p12 = Puzzle.create(
+  name: "Mythical Unicorns",
+  description: "Renowned artist Lisa Parker has created a magical image filled unicorns. This enchanting image features unicorns frolicking through a fantasy filled forest. A challenging puzzle full of subtle colour and intricate detail.",
+  price: 11.50,
+  pieces: 2000,
+  user: u2
+)
+file_12 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v1652814127/puzzlend/Mythical_Unicorns_nagmqi.jpg")
+p12.photo.attach(io: file_12, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 puts "Creating bookings..."
 
