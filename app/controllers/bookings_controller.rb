@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
-      redirect_to @booking, notice: 'Booking updated!'
+      redirect_to my_bookings_path, notice: 'Booking updated!'
     else
       render :edit
     end
