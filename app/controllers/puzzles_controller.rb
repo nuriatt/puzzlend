@@ -8,6 +8,7 @@ class PuzzlesController < ApplicationController
 
   def show
     @puzzle = find_puzzle
+    @booking = Booking.new
   end
 
   # UPDATE
