@@ -8,7 +8,8 @@ class BookingsController < ApplicationController
   # UPDATE - WIP
 
   def edit
-    @booking = Booking.find(params[:id])
+     @booking = Booking.find(params[:id])
+     @puzzle = @booking.puzzle
   end
 
   def update
