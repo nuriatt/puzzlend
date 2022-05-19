@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :puzzles do
     resources :bookings, only: [:new, :create]
+    resources :reviews
   end
 
   resources :users do

@@ -34,6 +34,9 @@ gem 'cloudinary', '~> 1.16.0'
 gem "bootstrap_form", "~> 5.0"
 gem 'pg_search', '~> 2.3.0'
 
+# faker for seeds
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form', github: 'heartcombo/simple_form'

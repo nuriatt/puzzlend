@@ -3,6 +3,7 @@ class Puzzle < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 0 }
 
   has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   belongs_to :user
 
   has_one_attached :photo
@@ -15,6 +16,12 @@ class Puzzle < ApplicationRecord
 
   def free?
     price.zero?
+  end
+
+  def avg_stars
+    count = 0.00
+    reviews.each { |review| count += review.stars }
+    (count / reviews.size).round(2)
   end
 
   include PgSearch::Model

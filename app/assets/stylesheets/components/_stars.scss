@@ -1,0 +1,25 @@
+// Star Rating
+//
+// Credit: https://codepen.io/filcp/pen/QvZVOg
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  height: 25px;
+  justify-content: left;
+
+  .back-stars {
+    display: flex;
+    color: $middle-gray;
+    position: relative;
+    // text-shadow: 0px 1px 0 #a2a2a2;
+  }
+  .front-stars {
+    display: flex;
+    color: $yellow;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+  }
+}
