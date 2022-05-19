@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require "open-uri"
+require 'faker'
 
 puts "Cleaning database..."
 Booking.destroy_all
@@ -148,5 +149,20 @@ Booking.create(user: u2, puzzle: p2, start_date: Time.now + (2*24*60*60), end_da
 Booking.create(user: u1, puzzle: p3, start_date: Time.now + (2*7*24*60*60), end_date: Time.now + (3*7*24*60*60))
 Booking.create(user: u3, puzzle: p4, start_date: Time.now + (3*7*24*60*60), end_date: Time.now + (2*24*60*60))
 Booking.create(user: u2, puzzle: p5, start_date: Time.now, end_date: Time.now + (2*7*24*60*60))
+
+puts "Creating reviews..."
+
+Puzzle.all.each do |puzzle|
+  3.times do
+    Review.create!(
+      {
+        username: Faker::Name.first_name,
+        stars: rand(1..5),
+        comment: Faker::GreekPhilosophers.quote,
+        puzzle: puzzle
+      }
+    )
+  end
+end
 
 puts "Finished!"
