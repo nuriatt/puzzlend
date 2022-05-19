@@ -2,9 +2,9 @@
 
   <h2>Edit Booking for <%= @booking.puzzle.name %></h2>
 
-  <%= bootstrap_form_for [@puzzle, @booking] do |f| %>
-    <%= f.date_field :start_date %>
-    <%= f.date_field :end_date %>
-    <%= f.submit "Update" %>
-  <% end %>
+    <%= simple_form_for @booking, data: { unavailable_dates: @puzzle.unavailable_dates.to_json } do |f| %>
+      <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.button :submit, "Update", class: "btn btn-primary" %>
+    <% end %>
 </div>
