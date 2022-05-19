@@ -41,6 +41,14 @@ class PuzzlesController < ApplicationController
     end
   end
 
+  # DELETE
+
+  def destroy
+    puzzle = find_puzzle
+    puzzle.destroy
+    redirect_to my_puzzles_path, alert: 'Puzzle deleted!'
+  end
+
   private
 
   def find_puzzle
