@@ -52,7 +52,7 @@ file_3 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165238
 p3.photo.attach(io: file_3, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p4 = Puzzle.create(
-  name: "Munster Historical Map (1610)",
+  name: "Munster Historical Map",
   description: "Originally sourced by renowned English cartographer John Speed (1552-1629) who published an atlas called 'The Theatre of the Empire of Great Britaine'. His maps themselves were of high quality and gained a great reputation for being among the best county maps. The finished jigsaw measures 66 x 50cm and comes with a Free colour guide print.",
   price: 19.99,
   pieces: 1000,
@@ -62,7 +62,7 @@ file_4 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165238
 p4.photo.attach(io: file_4, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p5 = Puzzle.create(
-  name: "Thomas Kinkade: Disney Dumbo",
+  name: "Disney Dumbo",
   description: "Thomas Kinkade brings another stunning Disney themed jigsaw puzzle. Here we see everyone's favourite elephant Jumbo soring above the circus of happiness, below is his mother, the ringmaster and all the excited families ready to watch the show.",
   price: 0.00,
   pieces: 1000,
@@ -72,7 +72,7 @@ file_5 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165238
 p5.photo.attach(io: file_5, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p6 = Puzzle.create(
-  name: "Bacchus and Ariadne - National Gallery",
+  name: "Bacchus and Ariadne",
   description: "Painted by Titian and dating back to 1520, Bacchus and Ariadne is a story from Greek Mythology, set on the Greek island of Naxos. In this scene, Ariadne has been abandoned by Theseus on this island. Bacchus, who is the god of wine, is leaping from a chariot drawn by cheetahs towards Adriadne after falling in love with her at first sight. In the sky, you can see Ariadne's constellation of stars, which was created for her by Bacchus. Discover the story as a beautiful 1000 piece jigsaw puzzle.",
   price: 19.99,
   pieces: 1000,

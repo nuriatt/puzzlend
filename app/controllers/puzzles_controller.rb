@@ -12,6 +12,7 @@ class PuzzlesController < ApplicationController
 
   def show
     @puzzle = find_puzzle
+    @booking = Booking.new
   end
 
   # UPDATE
@@ -39,6 +40,14 @@ class PuzzlesController < ApplicationController
     else
       render :new
     end
+  end
+
+  # DELETE
+
+  def destroy
+    puzzle = find_puzzle
+    puzzle.destroy
+    redirect_to my_puzzles_path, alert: 'Puzzle deleted!'
   end
 
   private

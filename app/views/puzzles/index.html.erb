@@ -4,7 +4,6 @@
 
 <div class="container">
 
-
 <%= form_tag puzzles_path, class: "input-group", method: :get do %>
 <%= text_field_tag :query,
   params[:query],
@@ -15,8 +14,8 @@
 <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
-
   <div class="cards pt-4">
+
     <% @puzzles.each do |puzzle| %>
       <div class="card" style="width: 18rem;">
         <div class="card-category" style="background-image: url('<%= cl_image_path puzzle.photo.key if puzzle.photo.key %>')">
