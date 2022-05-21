@@ -6,7 +6,6 @@
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   padding: 10px 10px;
@@ -28,18 +27,28 @@
     margin-bottom: 0;
     margin-top: 8px;
   }
-}
+  .card-product-infos {
+    padding: 16px;
+  }
 
-.card-product .card-product-infos {
-  padding: 16px;
 }
 
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 18px;
-  margin: 18px;
+  height: 100%;
+  h2 {
+    padding-top : 25px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  p {
+    font-size: 14px;
+    opacity: .7;
+    margin: 0;
+    padding: 4px 0;
+  }
 }
 
 .card-trip > img {
@@ -48,30 +57,20 @@
   margin: auto 0;
 }
 
-.card-trip h2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-trip p {
-  font-size: 14px;
-  opacity: .7;
-  margin: 0;
-  padding: 4px 0;
-}
-
-
 .card-trip .card-trip-infos {
-  padding: 0 12px;
   h2 {
     font-size: 18px;
   }
 }
 
-.card-trip-infos .card-trip-user {
+.card-trip-infos {
+  .card-trip-user {
   position: absolute;
   right: 16px;
   top: -20px;
   width: 40px;
+  }
+  p {
+    font-size: 18px;
+  }
 }

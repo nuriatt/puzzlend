@@ -1,16 +1,4 @@
-<div class="container"><h2>Library</h2></div>
-
 <div class="container">
-
-  <%= form_tag puzzles_path, class: "input-group", method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    id: "form1",
-    type: "search",
-    class: "form-control",
-    placeholder: "Find a puzzle"%>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
 
   <div class="container-fluid text-center bg-grey">
     <div class="row text-center">
@@ -20,14 +8,17 @@
           <%= link_to puzzle_path(puzzle)  do %>
             <div class="card-category" style="background-image: url('<%= cl_image_path puzzle.photo.key if puzzle.photo.key %>')"></div>
             <div class="card-body">
+              
               <div class="card-stars">
                 <h5 class="card-title"><%= puzzle.name %></h5>
                 <p class ="card-rating">★ <%= puzzle.avg_stars %></p>
               </div>
+             
               <div class="card-stars">
                 <p class="card-text"><%= puzzle.pieces.floor %> pieces </p>
                 <p><%= price(puzzle) %></p>
               </div>
+              
             </div>
           <% end %>
         </div>
@@ -35,5 +26,4 @@
       <% end %>
     </div>
   </div>
-
 </div>
