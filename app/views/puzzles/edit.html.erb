@@ -1,18 +1,3 @@
 <h1>Edit <%= @puzzle.name %></h1>
-<%= form_with(model: @puzzle, local: true) do |f| %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :description %>
-  <%= f.text_area :description, rows: 7 %>
-
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-
-  <%= f.label "Image" %>
-  <%= f.file_field :photo %>
-
-  <%= f.submit %>
-
-<% end %>
+<%= render 'puzzle_form', puzzle: @puzzle %>

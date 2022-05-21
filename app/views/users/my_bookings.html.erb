@@ -1,14 +1,14 @@
-<div class="container"><h2>My Bookings: <%= pluralize(@bookings.size, "puzzle") %></h2></div>
+<div class="container"><h1>My Bookings</h1></div>
 
 <div class="container">
 
   <div class="row">
   <% @bookings.each do |booking| %>
   <% puzzle = Puzzle.find(booking.puzzle_id) %>
-    <div class="col-sm-6">
+    <div class="col-sm-6 pt-4">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title"><strong><%= puzzle.name %></strong></h5>
+          <h4><strong><%= puzzle.name %></strong></h4>
           <p class="card-text">
             ★ <%= puzzle.avg_stars %> &bull; <%= puzzle.pieces.floor %> pieces
           </p>

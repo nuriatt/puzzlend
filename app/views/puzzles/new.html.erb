@@ -2,13 +2,6 @@
 
   <h1>Add a new puzzle</h1>
 
-  <%= bootstrap_form_for(@puzzle) do |f| %>
-    <%= f.text_field :name %>
-    <%= f.text_area :description %>
-    <%= f.number_field :price %>
-    <%= f.number_field :pieces %>
-    <%= f.file_field :photo %>
-    <%= f.submit "Create" %>
-  <% end %>
+  <%= render 'puzzle_form', puzzle: @puzzle %>
 
 </div>
