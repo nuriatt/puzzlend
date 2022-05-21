@@ -13,6 +13,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-category-puzzle {
+  height: 250px;
+}
+
 .card-category p {
   font-size: 16px;
   font-weight: normal;
@@ -48,6 +52,16 @@
 }
 
 .card > a {
+  text-decoration: none;
+  color: black;
+}
+
+.card > a {
+  text-decoration: none;
+  color: black;
+}
+
+.icons a {
   text-decoration: none;
   color: black;
 }
