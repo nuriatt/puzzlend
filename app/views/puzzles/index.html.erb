@@ -1,18 +1,5 @@
-<div class="container">
-  <h1>Puzzle Library</h1>
-</div>
 
 <div class="container">
-
-<%= form_tag puzzles_path, class: "input-group", method: :get do %>
-<%= text_field_tag :query,
-  params[:query],
-  id: "form1",
-  type: "search",
-  class: "form-control",
-  placeholder: "Find a puzzle"%>
-<%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
 
   <div class="cards pt-4">
 

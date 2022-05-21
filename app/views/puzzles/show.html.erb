@@ -1,58 +1,69 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-lg-7">
-      <div class="card-trip d-flex">
-        <%= cl_image_tag @puzzle.photo.key if @puzzle.photo.key %>
-        <div class="container d-flex flex-column justify-content-between">
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= @puzzle.name %></h2>
-              <p>Pieces: <%= @puzzle.pieces.floor %></p>
-              <p><%= @puzzle.description %></p>
+<div class="container title-box d-flex flex-column align-content-start">
+  <h1><%= @puzzle.name %></h1>
+    <div class="puzzle-info d-flex justify-content-start">
+      <p><%= @puzzle.pieces.floor %> Pieces</p>
+      <p>★ <%= @puzzle.avg_stars %></p>
+    </div>
+</div>
+
+
+<div class="container info-booking-box">
+   <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="card-trip d-flex flex-column">
+<div class="display-puzzle d-flex justify-content-center align-item-center">
+  <%= cl_image_tag @puzzle.photo.key, class: "puzzle-img" if @puzzle.photo.key %>
+</div>
+          <div class="d-flex flex-column justify-content-between">
+            <div class="card-trip-infos">
+              <div>
+
+                <p><%= @puzzle.description %></p>
+              </div>
             </div>
+
           </div>
-            <div class="justify-content-between align-items-center">
-            <h2 class="card-trip-pricing d-flex justify-content-end"><%= price(@puzzle) %></h2>
-            </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-lg-5">
-      <div class="card-trip d-flex">
-        <div class="form-wrapper" style="width: 450px; margin: 0 auto;">
-            <h2 >Book it!</h2>
-            <p>★ <%= @puzzle.avg_stars %></p>
-            <%= simple_form_for [@puzzle, @booking], data: { unavailable_dates: @puzzle.unavailable_dates.to_json } do |f| %>
-              <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-              <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-              <%= f.button :submit, "Go", class: "btn btn-primary" %>
-            <% end %>
+      <div class="col-lg-5">
+        <div class="card-trip booking d-flex flex-column">
+          <div class="form-wrapper" style="width: 450px; margin: 0 auto;">
+              <h2 ><%= price(@puzzle) %></h2>
+
+              <%= simple_form_for [@puzzle, @booking], data: { unavailable_dates: @puzzle.unavailable_dates.to_json } do |f| %>
+                <div class="d-flex justify-content-between">
+                  <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                  <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+                </div>
+                <%= f.button :submit, "Book Now", class: "btn btn-primary" %>
+              <% end %>
+          </div>
+
+<div class="container reviews-box mt-5">
+  <h2>Reviews</h2>
+    <ul>
+      <% @puzzle.reviews.each do |review| %>
+        <li>
+          <%= render "shared/stars", percent: review.stars_as_percent %>
+          <p>
+            <%= review.username %> -
+            <em>
+              <%= time_ago_in_words(review.created_at) %> ago
+            </em>
+          </p>
+          <p>
+            <%= review.comment %>
+          </p>
+        </li>
+      <% end %>
+    </ul>
+</div>
+
+<%= render 'reviews_form', puzzle: @puzzle, review: @review %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<div class="container">
-<h2>Reviews</h2>
-<ul>
-  <% @puzzle.reviews.each do |review| %>
-    <li>
-      <%= render "shared/stars", percent: review.stars_as_percent %>
-      <p>
-        <%= review.username %> -
-        <em>
-          <%= time_ago_in_words(review.created_at) %> ago
-        </em>
-      </p>
-      <p>
-        <%= review.comment %>
-      </p>
-    </li>
-  <% end %>
-</ul>
-</div>
-<div class="container">
-
-<%= render 'reviews_form', puzzle: @puzzle, review: @review %>

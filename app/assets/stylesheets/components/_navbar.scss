@@ -1,6 +1,5 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: #FDF5DA;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,11 +11,19 @@
 }
 
 .nav-item {
-  background-color: #EFD43B;
   border-radius: 1em;
+  padding: 12px;
   margin: 5px;
 }
 
 h1{
   text-align: center;
+}
+
+.burger {
+  font-size : 24px;
+}
+
+.search-bar {
+  width : 40%;
 }

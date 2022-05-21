@@ -1,16 +1,17 @@
-<h2>Write a review</h2>
+<div class="container review-form pt-5 col-lg-7">
+  <%# <h2>Write a review</h2> %>
 
-<%=  bootstrap_form_with(model: [puzzle, review]) do |f| %>
+  <%=  bootstrap_form_with(model: [puzzle, review]) do |f| %>
 
-  <%= render "shared/flashes", object: review %>
+    <%= render "shared/flashes", object: review %>
 
-  <%= f.text_field :username %>
+    <%= f.text_field :username %>
 
-  <%= f.select :stars, Review::STARS, prompt: "Pick a rating" %>
+    <%= f.select :stars, Review::STARS, prompt: "Pick a rating" %>
 
-  <%= f.text_area :comment %>
+    <%= f.text_area :comment %>
 
-  <%= f.submit 'Post Review' %>
+    <%= f.submit 'Post Review' %>
 
-<% end %>
+  <% end %>
 </div>
