@@ -13,6 +13,7 @@ class PuzzlesController < ApplicationController
   def show
     @puzzle = find_puzzle
     @booking = Booking.new
+    @review = Review.new
   end
 
   # UPDATE

@@ -22,7 +22,7 @@
       <div class="card-trip d-flex">
         <div class="form-wrapper" style="width: 450px; margin: 0 auto;">
             <h2 >Book it!</h2>
-            <p>★ <%= @puzzle.avg_stars %> &bull; <%= link_to pluralize(@puzzle.reviews.count, 'Review'), puzzle_reviews_path(@puzzle) %></p>
+            <p>★ <%= @puzzle.avg_stars %></p>
             <%= simple_form_for [@puzzle, @booking], data: { unavailable_dates: @puzzle.unavailable_dates.to_json } do |f| %>
               <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
               <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
@@ -53,3 +53,6 @@
   <% end %>
 </ul>
 </div>
+<div class="container">
+
+<%= render 'reviews_form', puzzle: @puzzle, review: @review %>
