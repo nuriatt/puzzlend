@@ -43,7 +43,7 @@ file_2 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165238
 p2.photo.attach(io: file_2, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p3 = Puzzle.create(
-  name: "Summer in Rio de Janiero",
+  name: "Rio de Janiero",
   description: "Take in the views of Rio de Janeiro, the second most populated city in Brazil, on a glorious Summer's day. In this spectacular scene of Botafogo, the name of this beachside area, we see Sugarloaf Mountain standing tall over the water. Just imagine the incredible views while taking a ride on the Sugarloaf Cable Car. This beautiful jigsaw puzzle will transport you to this beautiful place off the coast of the Atlantic Ocean.",
   price: 14.99,
   pieces: 1000,
@@ -53,7 +53,7 @@ file_3 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v165238
 p3.photo.attach(io: file_3, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p4 = Puzzle.create(
-  name: "Munster Historical Map",
+  name: "Munster Retro Map",
   description: "Originally sourced by renowned English cartographer John Speed (1552-1629) who published an atlas called 'The Theatre of the Empire of Great Britaine'. His maps themselves were of high quality and gained a great reputation for being among the best county maps. The finished jigsaw measures 66 x 50cm and comes with a Free colour guide print.",
   price: 19.99,
   pieces: 1000,
@@ -123,7 +123,7 @@ file_10 = URI.open("https://res.cloudinary.com/mygreenhouses/image/upload/v16524
 p10.photo.attach(io: file_10, filename: 'puzzle.jpg', content_type: 'image/jpg')
 
 p11 = Puzzle.create(
-  name: "Wasgij Retro Original 6",
+  name: "Wasgij Original",
   description: "This is a re-released version of Wasgij Original 6 - Blooming Marvellous‚, giving you the chance to collect the Wasgij range from the very beginning, which were released over 25 years ago!",
   price: 14.99,
   pieces: 1000,

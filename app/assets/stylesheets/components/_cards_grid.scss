@@ -29,6 +29,29 @@
   grid-gap: 16px;
 }
 
+.card-stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.card-title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.card-rating {
+  font-size: 14px;
+  margin: 0;
+}
+
+.card > a {
+  text-decoration: none;
+  color: black;
+}
+
  /* Smallest device */
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
