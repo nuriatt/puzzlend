@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
   def create
     @review = @puzzle.reviews.new(review_params)
     if @review.save
-      redirect_to puzzle_reviews_path(@puzzle), notice: 'Thanks for your review!'
+      redirect_to @puzzle, notice: 'Thanks for your review!'
     else
       render :new
     end
