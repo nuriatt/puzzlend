@@ -41,6 +41,7 @@
               <% end %>
           </div>
 
+<% if @puzzle.reviews.size > 0 %>
 <div class="container reviews-box mt-5">
   <h2>Reviews</h2>
     <ul>
@@ -60,6 +61,7 @@
       <% end %>
     </ul>
 </div>
+<% end %>
 
 <%= render 'reviews_form', puzzle: @puzzle, review: @review %>
         </div>
