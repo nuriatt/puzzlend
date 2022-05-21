@@ -1,0 +1,12 @@
+<div class="container">
+
+  <%= bootstrap_form_for(@puzzle) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.text_area :description %>
+    <%= f.number_field :price %>
+    <%= f.number_field :pieces %>
+    <%= f.file_field :photo %>
+    <%= f.submit "Create" %>
+  <% end %>
+
+</div>

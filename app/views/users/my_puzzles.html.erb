@@ -1,34 +1,41 @@
 <div class="container">
-  <h1>My Puzzles</h1>
+<h1>My Puzzles</h1>
 </div>
-
 <div class="container">
 
-</div>
-
-  <div class="container">
-    <div class="cards">
-      <% @puzzles.each do |puzzle| %>
+  <div class="container-fluid text-center bg-grey">
+    <div class="row text-center">
+    <div class="col-sm-3 pt-4">
         <div class="card" style="width: 18rem;">
-          <div class="card-category" style="background-image: url('<%= cl_image_path puzzle.photo.key if puzzle.photo.key %>')">
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"><%= puzzle.name %></h5>
-            <p class="card-text"><%= puzzle.pieces.floor %> Pieces &bull; <strong><%= price(puzzle) %></strong></p>
-            <%= link_to 'View details', puzzle_path(puzzle) %> | <%= link_to 'Delete', puzzle_path(puzzle), method: :delete, data: {confirm: "Are you sure?"} %>
-          </div>
+            <%= link_to new_puzzle_path  do %>
+              <div class="card-category" style="background-image: url('https://res.cloudinary.com/mygreenhouses/image/upload/v1652982401/puzzlend/AddPuzz_fig5ib.png')">
+              </div>
+              <div class="card-body">
+                <div class="card-stars">
+                  <h5 class="card-title">Add a New Puzzle</h5>
+                </div>
+              </div>
+            <% end %>
         </div>
-      <% end %>
-      <div class="card" style="width: 18rem;">
-          <%= link_to new_puzzle_path  do %>
-            <div class="card-category" style="background-image: url('https://res.cloudinary.com/mygreenhouses/image/upload/v1652982401/puzzlend/AddPuzz_fig5ib.png')">
-            </div>
+      </div>
+      <% @puzzles.each do |puzzle| %>
+      <div class="col-sm-3 pt-4">
+        <div class="card" style="width: 18rem;">
+          <%= link_to puzzle_path(puzzle)  do %>
+            <div class="card-category" style="background-image: url('<%= cl_image_path puzzle.photo.key if puzzle.photo.key %>')"></div>
           <% end %>
-          <div class="card-body card-new">
-            <h5 class="card-title">Add New Title</h5>
-            <p class="card-text">Pieces &bull; Price</p>
-            <%= link_to "Add New Puzzle", new_puzzle_path, class: "btn btn-secondary" %>
-          </div>
+            <div class="card-body">
+              <div class="card-stars">
+                <h5 class="card-title"><%= puzzle.name %></h5>
+                <p class="card-text icons">
+                  <%= link_to '🗑️', puzzle_path(puzzle), method: :delete, data: {confirm: "Are you sure?"} %> <%= link_to '✏️', edit_puzzle_path(puzzle) %>
+                </p>
+              </div>
+            </div>
         </div>
+      </div>
+      <% end %>
     </div>
   </div>
+
+</div>
