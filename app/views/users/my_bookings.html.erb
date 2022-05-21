@@ -1,27 +1,35 @@
+<div class="container"><h1>My Bookings</h1></div>
+
 <div class="container">
 
-  <h1>My Bookings: <%= pluralize(@bookings.size, "puzzle") %></h1>
-
+  <div class="row">
   <% @bookings.each do |booking| %>
-    <% puzzle = Puzzle.find(booking.puzzle_id) %>
-    <div class="card-product">
-      <section>
-        <div class="card-product-infos">
-          <div>
-            <h2>
-              <%= puzzle.name %>
-            </h2>
-            <p>
+  <% puzzle = Puzzle.find(booking.puzzle_id) %>
+    <div class="col-sm-6 pt-4">
+      <div class="card">
+        <div class="card-body">
+          <h4><strong><%= puzzle.name %></strong></h4>
+          <p class="card-text">
+            ★ <%= puzzle.avg_stars %> &bull; <%= puzzle.pieces.floor %> pieces
+          </p>
+          <p class="card-text">
+            <%= truncate puzzle.description, length: 100, separator: /\w+/ %> <%= link_to 'read more', puzzle_path(puzzle) %>
+          </p>
+          <div class="card-stars">
+            <p class="card-text">
               <strong>Start date:</strong> <%= booking.start_date.strftime("%d/%m/%Y") %>
             </p>
-            <p>
+            <p class="card-text">
               <strong>End date:</strong> <%= booking.end_date.strftime("%d/%m/%Y") %>
             </p>
-            <p><%= link_to '✏️ Update', edit_booking_path(booking) %> | <%= link_to '🗑️ Delete', booking_path(booking), method: :delete, data: {confirm: "Are you sure?"} %> </p>
+            <p class="card-text icons">
+              <%= link_to '🗑️', booking_path(booking), method: :delete, data: {confirm: "Are you sure?"} %> <%= link_to '✏️', edit_booking_path(booking) %>
+            </p>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   <% end %>
+</div>
 
 </div>

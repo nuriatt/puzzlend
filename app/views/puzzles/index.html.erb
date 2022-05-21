@@ -1,19 +1,29 @@
-
 <div class="container">
 
-  <div class="cards pt-4">
-
-    <% @puzzles.each do |puzzle| %>
-      <div class="card" style="width: 18rem;">
-        <div class="card-category" style="background-image: url('<%= cl_image_path puzzle.photo.key if puzzle.photo.key %>')">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title"><%= puzzle.name %></h5>
-          <p class="card-text"><%= puzzle.pieces.floor %> Pieces &bull; <strong><%= price(puzzle) %></strong></p>
-          <%= link_to 'View details', puzzle_path(puzzle), class: "btn btn-primary" %>
+  <div class="container-fluid text-center bg-grey">
+    <div class="row text-center">
+      <% @puzzles.each do |puzzle| %>
+      <div class="col-sm-3 pt-4">
+        <div class="card" style="width: 18rem;">
+          <%= link_to puzzle_path(puzzle)  do %>
+            <div class="card-category" style="background-image: url('<%= cl_image_path puzzle.photo.key if puzzle.photo.key %>')"></div>
+            <div class="card-body">
+              
+              <div class="card-stars">
+                <h5 class="card-title"><%= puzzle.name %></h5>
+                <p class ="card-rating">★ <%= puzzle.avg_stars %></p>
+              </div>
+             
+              <div class="card-stars">
+                <p class="card-text"><%= puzzle.pieces.floor %> pieces </p>
+                <p><%= price(puzzle) %></p>
+              </div>
+              
+            </div>
+          <% end %>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-
 </div>
