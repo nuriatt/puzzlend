@@ -2,9 +2,9 @@ module PuzzlesHelper
 
   def price(puzzle)
     if puzzle.free?
-      "Free!"
+      content_tag(:strong,"Free!")
     else
-      number_to_currency(puzzle.price, precision: 2, unit: "£")
+      content_tag(:strong, number_to_currency(puzzle.price, precision: 2, unit: "£")) + "/day"
     end
   end
 
